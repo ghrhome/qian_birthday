@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>小倩生日快乐</title>
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="./dist/css/idangerous.swiper.css">
+    <link rel="stylesheet" href="./dist/css/animate.css">
+    <link rel="stylesheet" href="./dist/css/activity_main.css">
+    <!--<link rel="stylesheet" href="css/activity.css">-->
+
+    <style>
+        html,body{padding:0;margin:0;width:100%;height:100%;background-color: #fff;overflow: hidden;
+        }
+
+        .swiper-slide{position: relative;}
+        #qian-birthday{
+            position: relative;
+            width:100%;
+            height:100%;
+            overflow: hidden;
+        }
+
+        #qian-birthday .love{
+            display: block;
+            width:375px;
+            height:467.5px;
+            position: absolute;
+            bottom:224px;
+            right:0;
+            background-image:url(./dist/images/heart.jpg);
+            background-size:contain;
+            background-repeat: no-repeat;
+            background-position:center center;
+            z-index:9;
+        }
+        #qian-birthday .love .love-num{
+            width:80px;
+            height:80px;
+            position: absolute;
+            font-size:36px;
+            color:#fff;
+            line-height: 80px;
+            text-align: center;
+            top:100px;
+            right:100px;
+        }
+        #qian-birthday .panda,
+        #qian-birthday .panda .panda-face{
+            display: block;
+            z-index:99;
+            width:324px;
+            height:335px;
+            position: absolute;
+            bottom:0;
+            left:0;
+            background-image:url(./dist/images/panda.png);
+            background-size:contain;
+            background-repeat: no-repeat;
+            background-position:center center;
+        }
+        #qian-birthday .panda .panda-face{
+            background-image: url(./dist/images/panda_face.png);
+            opacity: 0;
+            -webkit-transition: opacity .2s;
+            -moz-transition: opacity .2s;
+            -ms-transition: opacity .2s;
+            -o-transition: opacity .2s;
+            transition: opacity .2s;
+            z-index:199;
+        }
+
+
+        .modal-backdrop {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba(0,0,0,0.78);
+            opacity: .82;
+        }
+
+        .modal-dialog{
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            margin-top: -140px;
+            margin-left: -140px;
+            width: 280px;
+           /* height: 280px;*/
+            min-height: 220px;
+             background-color: #fff;
+
+        }
+
+        .modal-dialog:after{
+            display: block;
+            position:absolute;
+            content:" ";
+
+            width:220px;
+            height:116px;
+            background-image: url(./dist/images/cake.png);
+            background-size:contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            top: 20px;
+                 left: -8px;
+            -webkit-transform: rotate(-20deg);
+            -moz-transform: rotate(-20deg);
+            -ms-transform: rotate(-20deg);
+            -o-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+        }
+        .modal-dialog .modal-content{
+            padding:15px!important;
+            background:none!important;
+        }
+        .modal-dialog .modal-content img{
+            width:100%;
+        }
+    </style>
+
+    <script src="./dist/js/jquery.js"></script>
+
+    <script src="./dist/js/swiper.jquery.min.js"></script>
+    <script src="./dist/js/swiper.animate1.0.2.min.js"></script>
+</head>
+<body>
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status"><em class="em-icon show-spin"></em></div>
+</div>
+<div class="page"  id="qian-birthday">
+    <div role="main" class="activity-content">
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="love ani "  swiper-animate-effect="fadeInUp" swiper-animate-duration=".8s" swiper-animate-delay="2.2s">
+                        <div class="love-num"><em>0</em></div>
+                    </div>
+                    <div class="panda ani"  swiper-animate-effect="bounceInLeft" swiper-animate-duration=".5s" swiper-animate-delay="1.8s">
+                        <div class="panda-face"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+</div>
+
+<div class="modal modal-qian" id="modal-qian-celebrate" >
+    <div class="modal-backdrop" style=""></div>
+    <div class="modal-dialog ">
+
+        <div class="modal-content" id="lucky">
+            <img class="qian" src="./dist/images/qian.jpg"></img>
+          <!--  <button type="button" class="close" id="nolucky-modal-close"></button>-->
+
+        </div><!-- /.modal-content -->
+
+    </div><!-- /.modal-dialog -->
+</div><!-- .modal-->
+
+<script>
+    $(window).load(function() {
+        $('#preloader').delay(350).fadeOut(function(){
+
+        });
+    });
+
+    $(document).ready(function(){
+
+        var body_height=parseInt($("body").css("height"));
+
+        var swiper_height=body_height;
+
+        $("#qian-birthday .swiper-container").css("height",swiper_height+"px");
+
+        var mySwiper = new Swiper ('.swiper-container', {
+            direction : 'vertical',
+            onInit: function(swiper){ //
+                swiperAnimateCache(swiper); //隐藏动画元素
+                swiperAnimate(swiper); //初始化完成开始动画
+            },
+            onSlideChangeEnd: function(swiper){
+                swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+            }
+        });
+
+        $(".ani").on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(e){
+            $(this).removeClass("animated fadeInUp fadeUp bounceInLeft tada pulse swing wobble jello").removeAttr("style")
+        });
+
+        var touch=0;
+
+        $(".love").on("click",function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            $(this).addClass("animated pulse");
+
+        });
+        var touchEffect=["tada","swing","wobble","jello"];
+        var num=0;
+        $(".panda").on("click",function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            touch+=1;
+
+            var effect=touchEffect[touch%4];
+            $(".panda").addClass("animated "+effect);
+            //$(".love").addClass("animated pulse");
+            //$(".panda-face").css("opacity",.2*touch);
+
+            var randomNum=parseInt(Math.random()*100);
+            num+=randomNum;
+            if(num>=100){
+                num=100;
+
+            }
+            $(".panda-face").css("opacity",num/100);
+            $(".love-num em").text(num);
+
+            if(num==100){
+                setTimeout(function(){
+                    $("#modal-qian-celebrate").css("display","block").find(".modal-dialog").removeClass("bounceOutDown").addClass("animated bounceInDown");
+
+                },300)
+            }
+
+        });
+
+
+        $(".modal-dialog").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(e){
+
+            $(".modal-dialog").removeClass("animated bounceInDown");
+
+        });
+
+
+
+        $(".modal .close").on("click",function(e){
+            e.preventDefault();
+            $(".modal-dialog").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(e){
+                $(".modal-dialog").removeClass("animated bounceOutDown").closest(".modal-qian").hide();
+            });
+
+            $(this).closest(".modal-dialog").removeClass("bounceInDown").addClass("animated bounceOutDown");
+        });
+
+    });
+</script>
+</body>
+</html>

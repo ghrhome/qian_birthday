@@ -1,0 +1,160 @@
+/*activity*/
+#activity-shake-main .slide-main .slide-footer{text-align: center;color:#fff;}
+#activity-shake-main .slide-main .slide-footer h3{margin-top: 56px;margin-bottom: 6px;font-size: 14px;font-weight: normal;}
+#activity-shake-main #slide-main .swiper-img{position:relative;margin: 68px auto;margin-bottom: 0;width:200px;height:200px;border-radius:200px;background-image:url(../img/base_circle.png);background-repeat: no-repeat;background-size: contain;overflow: hidden;}
+h3.shake-hand,.shake-out-circle{margin:0;width:190px;height:190px;background-repeat: no-repeat;background-size: contain;background-position: center bottom;}
+h3.shake-hand{
+    margin-top: 5px;
+    background-image: url(../img/hand.png);background-size: 58%;background-position: center 75%;
+
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-iteration-count:infinite;
+
+    -moz-animation-fill-mode: both;
+    -moz-animation-iteration-count:infinite;
+
+    animation-fill-mode: both;
+    animation-iteration-count:infinite;
+
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+}
+
+
+.shake-out-circle{position:absolute;top:0px;left:0px;width:200px;height:200px;background-image: url(../img/base_out.png);}
+#activity-shake-main #slide-main .swiper-title{
+    margin:20px auto;width:245px;height:33px;background-image:url(../img/font.png);background-repeat: no-repeat;background-size: contain;
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+
+    -webkit-animation-duration: 1.2s;
+    animation-duration: 1.2s;
+
+}
+#activity-shake-main #slide-sub .swiper-title{margin:30px auto;width:122px;height:53px;background-image:url(../img/activity_rules.png);background-repeat: no-repeat;background-size: contain;}
+
+#activity-shake-main #slide-main .swiper-flows{
+    position:absolute;top:0;margin:-15px;width:100%;height:100%;background-image: url(../img/flows.png);background-repeat: no-repeat;background-size: contain;
+    background-position: top center;
+    -webkit-animation-delay: 2.2s;
+    animation-delay: 2.2s;
+
+    -webkit-animation-duration: 1.2s;
+    animation-duration: 1.2s;
+}
+
+a#my-coupon{display:inline-block;position: absolute;top:10px;right:15px;margin-top:10px;width:59px;height:28px;background-image: url(../img/mycoupon.png);background-repeat: no-repeat;background-size: contain;z-index:99;}
+.rule-content{
+    padding: 10px 39px;
+    color: #ff6000;
+}
+
+.ani_x{
+    transform-origin:50% 50%;
+    -ms-transform-origin:20% 40%; 		/* IE 9 */
+    -webkit-transform-origin:20% 40%;	/* Safari 和 Chrome */
+    -moz-transform-origin:20% 40%;		/* Firefox */
+    -o-transform-origin:20% 40%;		/* Opera */
+}
+
+.rule-content dl>dt{margin-bottom:5px;}
+.rule-content dl>dd{margin:0;line-height:21px; }
+div.how-to-change h3{font-weight: normal;color:#ff6000;font-size: 15px;text-align: center;}
+
+.activity-remind{margin-top:45px;height:24px;width:100%;background-position: center center;background-size: contain;background-repeat: no-repeat;}
+.activity-unstart{background-image: url(../img/unstart.png);}
+.activity-outdate{background-image: url(../img/outdate.png);}
+
+#congratulation,#no-lucky{
+    padding:0;
+    width:100%;
+    height:100%;
+    background:none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position:center center;
+}
+#congratulation{background-image:url(../img/congratulations.png);}
+#no-lucky{background-image:url(../img/no_lucky.png);}
+#congratulation {text-align: center;}
+#congratulation h3.coupon-title{position:absolute;margin:0;bottom:120px;left:0;width:100%;height:50px;line-height:50px;color:#fff;font-size:22px;text-align:center;font-weight: normal;}
+
+#congratulation p.coupon-info{
+    position:absolute;margin:0;bottom:98px;left:0;width:100%;height:28px;line-height:28px;color:#bd1352;
+    font-size:12.8px;text-align:center;font-weight: normal;}
+
+#congratulation button.shake-again,#no-lucky button.shake-again,#congratulation a.btn-my-coupon,#no-lucky a.btn-my-coupon
+{position: absolute;bottom:60px;left:50%;margin-left:-73px;height:32px;width:146px;
+    background:0;
+    border:0;
+    border-radius:0;
+
+    /*background-image: url(../img/btn-shake-again.png);
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;*/
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 73px 18px;
+
+}
+
+#congratulation button.shake-again,#no-lucky button.shake-again{
+    background-color:#bd1352;
+    background-image: url(../img/shake-again.png);
+
+
+}
+
+#congratulation a.btn-my-coupon,#no-lucky a.btn-my-coupon{
+    border:solid 1px #bd1352;
+    bottom:20px;
+
+    background-image: url(../img/btn_my-coupon.png);
+}
+
+/*#congratulation a.btn-my-coupon,#no-lucky a.btn-my-coupon{
+    display: inline-block;
+    bottom:23px;
+    border-radius: 0;
+    background-image: url(../img/btn_my-coupon.png);
+}*/
+.content-head img{width:100%;}
+.my-coupons{margin-top:15px;padding:0;background-color: #fff;overflow: hidden;overflow-y: auto;}
+.my-coupons>ul{padding:0;padding-bottom:15px;margin:0;list-style: none;padding-right:0;}
+.my-coupons>ul>li{padding-left:15px;padding-right:15px;height:62px;width:100%;border-bottom:solid 1px #ddd;line-height: 62px;}
+.my-coupons>ul>li:nth-last-child(1){border:0;}
+@media screen and (min-width: 320px){
+    .my-coupons>ul>li span{max-width:220px;overflow: hidden;text-overflow: ellipsis;white-space:nowrap;color:#333;font-size: 13px;}
+}
+
+@media screen and (min-width: 360px){
+    .my-coupons>ul>li span{max-width:260px;overflow: hidden;text-overflow: ellipsis;white-space:nowrap;color:#333;font-size: 13px;}
+}
+@media screen and (min-width: 420px){
+    .my-coupons>ul>li span{max-width:300px;overflow: hidden;text-overflow: ellipsis;white-space:nowrap;color:#333;font-size: 13px;}
+}
+@media screen and (min-width: 480px){
+    .my-coupons>ul>li span{max-width:360px;overflow: hidden;text-overflow: ellipsis;white-space:nowrap;color:#333;font-size: 13px;}
+}
+
+.rule-content{font-size: 13px;}
+
+#activity-coupon .icon-coupon{float:left;margin-top:11px;margin-right:15px;}
+#activity-coupon .icon-coupon-status{float: right;margin-top:16.5px;}
+
+
+
+
+
+
+
+
+
+
+

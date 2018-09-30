@@ -1,0 +1,249 @@
+html{
+    -webkit-tap-hightlight-color:rgba(0,0,0,0);
+}
+a,button,*{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    /*-webkit-user-modify:read-write-plaintext-only;*/
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    outline: none;
+}
+*:focus{outline: none;}
+.user-select-none{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+}
+
+input, textarea{
+    -webkit-appearance:none;
+}
+
+/*activity main*/
+*{box-sizing: border-box;}
+html,body{width:100%;}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/*
+.page{width:100%;padding-top:49px;}
+*/
+/* preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e4e7ea;
+    z-index: 10000;
+}
+
+#status {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -15px 0 0 -15px;
+    font-size: 32px;
+}
+
+.page{width:100%;}
+.page .activity-header{position:fixed;top:0;height:48px;width:100%;background-color: #fff;border-bottom: solid 1px #ddd;z-index:1001;}
+.page .activity-header a{float:left;margin-left:15px;height:48px;line-height: 48px;}
+.page .activity-header h3{margin:0;padding:0;margin-left:20%;height:48px;width:60%;line-height: 48px;text-align: center;font-weight: normal;}
+.page .activity-content{position: relative;}
+
+/*animation*/
+.act-animation {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: .2s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-iteration-count:infinite;
+
+    -moz-animation-duration: 1s;
+    -moz-animation-delay: .2s;
+    -moz-animation-timing-function: ease;
+    -moz-animation-fill-mode: both;
+    -moz-animation-iteration-count:infinite;
+
+    -ms-animation-duration: 1s;
+    -ms-animation-delay: .2s;
+    -ms-animation-timing-function: ease;
+    -ms-animation-fill-mode: both;
+    -ms-animation-iteration-count:infinite;
+
+    animation-duration: 1s;
+    animation-delay: .2s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    animation-iteration-count:infinite;
+}
+
+/*modal*/
+.modal-open {overflow: hidden;}
+.modal-open .modal {overflow-x: hidden;overflow-y: auto;}
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    font-size: 14px;
+    color:#333;
+}
+
+.modal-backdrop {
+    position: absolute;
+    width:100%;
+    height:100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color:rgba(0,0,0,0.78);
+    opacity:0;
+   /* filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);*/
+}
+
+.modal-open .modal-backdrop{
+    display:block;
+}
+.modal-dialog {
+    position: absolute;
+    top:45%;
+    left:50%;
+    margin-top:-187px;
+    margin-left:-140px;
+    width: 280px;
+    height:374px;
+    min-height: 220px;
+   /* background-color: #fff;*/
+    background: none;
+}
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+}
+.modal-header {
+    min-height: 22px;
+    padding: 15px;
+    margin-top: -2px;
+}
+
+.close {
+    position: absolute;
+    top:-18px;
+    right:-18px;
+    height:38px;
+    width:38px;
+    border-radius: 38px;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    background-color: inherit;
+    background-image: url(../images/btn-close.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+
+}
+
+
+button.close {
+    padding: 0;
+    cursor: pointer;
+    border: 0;
+}
+button.close:hover{
+    background-color: #c53336;
+}
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+}
+.modal-body {
+    position: relative;
+    padding: 20px;
+}
+
+/*items*/
+.em-icon{display:inline-block;width:21px;height:21px;background-position: center center;background-repeat: no-repeat;background-size: contain;}
+.show-spin{width:30px;height:30px;background-image: url(../images/icon_ask.png);}
+.em-nav-back{background-image: url(../images/btn_back.png);}
+
+.icon-next,.icon-pre{margin-bottom: 15px;width:15px;height:8px;background-position:center top;background-image: url(../images/arrow_more.png);}
+.icon-pre{background-image:url(../images/arrow_pre.png); }
+.icon-coupon{width:40px;height:40px;background-image: url(../images/icon_coupon.png);}
+.icon-coupon-status{width:56px;height:29px;background-image: url(../images/icon_got.png);}
+
+.slide-main{position: relative;padding:15px;width:100%;height:100%;background-size: cover;background-repeat: no-repeat;background-position: center center;}
+.slide-main:before{
+    display: block;
+    position: absolute;
+    width: 78px;
+    height: 45px;
+    left: 16px;
+    top: 16px;
+    background-image: url(../images/logo_xm.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    content: " ";
+}
+.slide-main .slide-footer{
+    position:absolute;
+    bottom:0;
+    margin-left:-15px;
+    margin-right:-15px;
+    height:100px;
+    width:100%;
+    background-position:center bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
