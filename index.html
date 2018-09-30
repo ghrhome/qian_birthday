@@ -14,7 +14,14 @@
     <style>
         html,body{padding:0;margin:0;width:100%;height:100%;background-color: #fff;overflow: hidden;
         }
-
+        #soundcontainer {
+            position: absolute;
+            opacity: 0;
+            width: 200px;
+            height: 1px;
+            top: -100px;
+            left: -100px;
+        }
         .swiper-slide{position: relative;}
         #qian-birthday{
             position: relative;
@@ -135,6 +142,12 @@
 <div id="preloader">
     <div id="status"><em class="em-icon show-spin"></em></div>
 </div>
+
+<div id="soundcontainer">
+    <audio id="bgsound" loop="loop" src="./a1.mp3">
+        <source src="./a1.mp3"> </audio>
+</div>
+
 <div class="page"  id="qian-birthday">
     <div role="main" class="activity-content">
 
@@ -252,6 +265,32 @@
 
             $(this).closest(".modal-dialog").removeClass("bounceInDown").addClass("animated bounceOutDown");
         });
+
+        var audio = document.getElementById("bgsound");
+       /* function _soundCtrl(){
+            $(".sound").on("click",function(e){
+
+                if($(this).hasClass('sound-play')){
+                    $(this).removeClass("sound-play").addClass("sound-mute");
+                    audio.muted = true;
+                }else{
+                    $(this).removeClass("sound-mute").addClass("sound-play");
+                    audio.muted = false;
+                }
+
+            });
+        }*/
+        function _audioAutoPlay(id){
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+            document.addEventListener('YixinJSBridgeReady', function() {
+                audio.play();
+            }, false);
+        }
+
+        _audioAutoPlay();
 
     });
 </script>
